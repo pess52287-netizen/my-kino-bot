@@ -466,8 +466,7 @@ def start_cmd(message):
 
         # Direct movie code link logic
         if direct_movie_code:
-            if direct_movie_code:
-    if database.get_movie(direct_movie_code):
+              if database.get_movie(direct_movie_code):
         send_movie_card(message.chat.id, direct_movie_code, user_id)
     else:
         bot.send_message(
