@@ -464,16 +464,16 @@ def start_cmd(message):
             if not check_must_join(message):
                 return
 
-        # Direct movie code link logic
+                # Direct movie code link logic
         if direct_movie_code:
-              if database.get_movie(direct_movie_code):
-        send_movie_card(message.chat.id, direct_movie_code, user_id)
-    else:
-        bot.send_message(
-            message.chat.id,
-            "❌ Bunday kodli kino mavjud emas!"
-        )
-    return
+            if database.get_movie(direct_movie_code):
+                send_movie_card(message.chat.id, direct_movie_code, user_id)
+            else:
+                bot.send_message(
+                    message.chat.id,
+                    "❌ Bunday kodli kino mavjud emas!"
+                )
+            return
 
         prem_info = database.get_premium_info(user_id)
         badge = " 👑 [PREMIUM]" if prem_info else ""
